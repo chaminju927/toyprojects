@@ -12,6 +12,12 @@
     font-weight: normal;
     font-style: normal;
    }
+   @font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
    .main {
   display: flex;
   flex-direction: column;
@@ -30,13 +36,14 @@
 }
 
 .contents {
+  font-family: 'SUITE-Regular';
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-  /* width: 900px;
-  height: 500px; */
-  border: 3px solid black;
+  border: solid 3px red;
+	border-radius: 10%;
 }
 
 .submitBtn {
@@ -57,7 +64,7 @@
 <body>
   <div class="main">
     <div class="mainBox">
-      <h2 class="title">Make a Sentence !</h2>
+      <h2 class="title"> Make a Sentence !</h2>
         <div>
           <textarea id="contents" rows="20" cols="100"></textarea>
           <button class="submitBtn" onclick="splitSentences()">Submit</button>
