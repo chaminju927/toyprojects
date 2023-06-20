@@ -80,7 +80,7 @@ function splitSentences() {
   for (let i = 0; i < sentences.length; i++) {
     let words = sentences[i].split(' '); 
     shuffleWords(words); 
-    let shuffledSentence = words.join(' '); 
+    let shuffledSentence = words.join('/'); 
     shuffledSentences.push(shuffledSentence); 
   }
   
