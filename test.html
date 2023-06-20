@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    @font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+   }
+   .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: white;
+}
+
+
+.title {
+  font-size: 65px;
+  color: rgb(104, 101, 101);
+  margin: 0;
+  font-family: 'LOTTERIADDAG';
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  /* width: 900px;
+  height: 500px; */
+  border: 3px solid black;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 45%;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="mainBox">
+      <h2 class="title">Make a Sentence !</h2>
+        <div>
+          <textarea id="contents" rows="20" cols="100"></textarea>
+          <button class="submitBtn" onclick="splitSentences()">Submit</button>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+function shuffleWords(words) {
+  words.sort(() => Math.random() - 0.5);
+}
+
+function splitSentences() {
+  var inputText = document.getElementById("contents").value;
+  var sentences = inputText.split('.'); // 배열
+  let shuffledSentences = [];
+  
+  for (let i = 0; i < sentences.length; i++) {
+    let words = sentences[i].split(' '); 
+    shuffleWords(words); 
+    let shuffledSentence = words.join(' '); 
+    shuffledSentences.push(shuffledSentence); 
+  }
+  
+  var outputText = shuffledSentences.join('.\n'); 
+  document.getElementById("contents").value = outputText; 
+}
+  // 예시
+//A defining element of catastrophes is the magnitude of their harmful consequences.To help societies prevent or reduce damage from catastrophes, a huge amount of effort and technological sophistication are often employed to assess and communicate the size and scope of potential or actual losses.This effort assumes that people can understand the resulting numbers and act on them appropriately.However, recent behavioral research casts doubt on this fundamental assumption. Many people do not understand large numbers.Indeed, large numbers have been found to lack meaning and to be underestimated in decisions unless they convey affect (feeling). This creates a paradox that rational models of decision making fail to represent.On the one hand, we respond strongly to aid a single individual in need. On the other hand, we often fail to prevent mass tragedies or take appropriate measures to reduce potential losses from natural disasters.
+
+   
+</script>
+</html>
